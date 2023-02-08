@@ -23,13 +23,35 @@ router.get('/:id', async (req, res) => {
   res.json(oneTag);
 });
 
-router.post('/', (req, res) => {
+// TO DO BELOW
+router.post('/', async (req, res) => {
   // create a new tag
+  try {
+    const newTag = await ProductTag.create(req.body);
+    res.json(200).json(newTag);
+  } catch (err) {
+    res.json(400).json(err);
+  }
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', async (req, res) => {
   // update a tag's name by its `id` value
+  try {
+    const updateTag = await ProductTag.update(
+      {
+      tag_name: req.body.tag_name
+      },
+      {
+        where: {
+          id: req.params.id
+        }
+      });
+      res.status(200).json(updateTag);
+  } catch (err) {
+    res.status(400).json(err);
+  }
 });
+
 
 router.delete('/:id', async (req, res) => {
   // delete on tag by its `id` value

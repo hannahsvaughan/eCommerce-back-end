@@ -12,6 +12,7 @@ SO THAT my company can compete with other e-commerce companies
 Dependencies installed: MySQL2 and Sequelize.
 
 ## Video Walkthrough/Usage
+Demo Video Here: https://drive.google.com/file/d/1xCN-KstX2WZwmzHhYRXZSA0354GZWFmB/view
 
 ## Questions
 If you have any questions about the repo, open an issue or contact me directly at hannahvaughan421@gmail.com.
